@@ -6,8 +6,10 @@ The goal of this project is to build and train a machine learning model to predi
 ## Results (held-out month: May 2026)
 - Model: XGBoost, tuned with RandomizedSearchCV (15 parameter combinations)
 - Out-of-sample R²: 0.69
-- Median absolute percentage error: 17.7% overall, 15.4% on mid-tier homes ($500K-$1M)
+- Median absolute percentage error: 17.7% overall, 15.4% on mid-tier homes (\$500K-\$1M)
 - Key finding: a school-district price feature built from GIS spatial joins drove 32.4% of feature importance and lifted Random Forest R² from 0.37 to 0.68
+
+Data: Data files are not included in this repo. CRMLS sold-listing data is proprietary, and the school district shapefiles come from the California Department of Education. The notebooks expect them in data/ and data/school_districts/.
 
 ---
 
@@ -67,10 +69,15 @@ The goal of this project is to build and train a machine learning model to predi
 
 ### Instructions to Re-Run the Pipeline
 
-1. **Clone the Repository & Set Up Environment:**
-   ```bash
+1. Clone the repository and set up the environment:
+
+```bash
 git clone https://github.com/aaron-reimer/IDX-Exchange.git
 cd IDX-Exchange
 python3 -m venv venv
 source venv/bin/activate
 pip install pandas numpy geopandas shapely scikit-learn xgboost jupyter matplotlib seaborn
+```
+
+2. Add the data files (see the data note above).
+3. Run `jupyter notebook` and execute the notebooks in numerical order.
