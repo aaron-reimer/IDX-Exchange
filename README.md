@@ -3,6 +3,12 @@
 ### Project Objective
 The goal of this project is to build and train a machine learning model to predict the `ClosePrice` (final sales price) of single residential properties in California using historical real estate data sourced from the California Regional Multiple Listing Service (CRMLS).
 
+## Results (held-out month: May 2026)
+- Model: XGBoost, tuned with RandomizedSearchCV (15 parameter combinations)
+- Out-of-sample R²: 0.69
+- Median absolute percentage error: 17.7% overall, 15.4% on mid-tier homes ($500K-$1M)
+- Key finding: a school-district price feature built from GIS spatial joins drove 32.4% of feature importance and lifted Random Forest R² from 0.37 to 0.68
+
 ---
 
 ### Weekly Milestones & Progress
@@ -63,8 +69,8 @@ The goal of this project is to build and train a machine learning model to predi
 
 1. **Clone the Repository & Set Up Environment:**
    ```bash
-   git clone [https://github.com/aaron-reimer/IDX-Exchange.git](https://github.com/aaron-reimer/IDX-Exchange.git)
-   cd IDX-Exchange
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install pandas numpy geopandas shapely scikit-learn xgboost jupyter
+git clone https://github.com/aaron-reimer/IDX-Exchange.git
+cd IDX-Exchange
+python3 -m venv venv
+source venv/bin/activate
+pip install pandas numpy geopandas shapely scikit-learn xgboost jupyter matplotlib seaborn
