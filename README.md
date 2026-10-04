@@ -62,7 +62,7 @@ Data: Data files are not included in this repo. CRMLS sold-listing data is propr
 * Evaluated out-of-sample performance on the May 2026 test set beyond $R^2$, computing Mean Absolute Error (MAE: \$284,128.99), Root Mean Squared Error (RMSE: \$460,496.79), Mean Absolute Percentage Error (MAPE: 24.70%), and Median Absolute Percentage Error (MdAPE: 17.66%).
 * Segmented residual errors by market tiers (Entry Level, Mid Tier, Upper Tier, Luxury), identifying that the model achieved peak accuracy on core Mid-Tier homes (\$500k–\$1M) with a median percentage error of 15.40%.
 * **Deliverables:**
-  * `06_evaluation.ipynb` (Comprehensive residual diagnostic and evaluation notebook).
+  * `07_evaluation.ipynb` (Comprehensive residual diagnostic and evaluation notebook).
   * `metrics_summary.csv` (Exported breakdown of performance metrics and error distributions across market tiers).
 
 ---
