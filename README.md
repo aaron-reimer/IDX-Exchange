@@ -9,7 +9,9 @@ The goal of this project is to build and train a machine learning model to predi
 - Median absolute percentage error: 17.7% overall, 15.4% on mid-tier homes (\$500K-\$1M)
 - Key finding: a school-district price feature built from GIS spatial joins drove 32.4% of feature importance and lifted Random Forest R² from 0.37 to 0.68
 
-Data: Data files are not included in this repo. CRMLS sold-listing data is proprietary, and the school district shapefiles come from the California Department of Education. The notebooks expect them in data/ and data/school_districts/.
+**Data:** CRMLS sold-listing data is proprietary, so data files are not included in this repo. School district boundaries come from the California Department of Education. The notebooks expect files in `data/` and `data/school_districts/`.
+
+**Presentation:** [IDX Exchange final presentation](IDX%20Exchange%20-%20ds56%20Presentation.pdf)
 
 ---
 
@@ -30,9 +32,7 @@ Data: Data files are not included in this repo. CRMLS sold-listing data is propr
 * Implemented clean data preprocessing routines by dropping listings completely missing critical values (`ClosePrice`, `LivingArea`) and applying median imputation to resolve missing values (`BedroomsTotal`, `BathroomsTotalInteger`, `LotSizeSquareFeet`).
 * Normalized numerical features (`LivingArea`, `LotSizeSquareFeet`, etc.) using `StandardScaler` to ensure a balanced, standardized feature set.
 * Built a dynamic, rolling time-series train/test split, isolating the most recent month (May 2026) as the testing set and defining a tunable sliding historical window (6 months) preceding it for model training.
-* **Deliverables:**
-  * `02_preprocessing.ipynb` (Clean preprocessing pipeline and dynamic train/test splitting notebook).
-  * `cleaned_sales_data.csv` (Fully cleaned, normalized, and imputed master dataset exported for training).
+* **Deliverable:** `02_preprocessing.ipynb` (Clean preprocessing pipeline and dynamic train/test splitting notebook).
 
 #### Week 4: Baseline Model
 * Evaluated predictions on the May 2026 test set using the Coefficient of Determination ($R^2$) metric to establish an initial performance benchmark.
@@ -48,9 +48,7 @@ Data: Data files are not included in this repo. CRMLS sold-listing data is propr
 * Engineered domain-specific features including `bed_bath_ratio` and `property_age` relative to transaction dates.
 * Integrated California Department of Education GIS boundary shapefiles via `GeoPandas` to execute spatial joins on property coordinates.
 * Calculated `school_district_avg_price` as a high-signal geographic feature, which drove Random Forest $R^2$ accuracy from 0.37 to 0.68.
-* **Deliverables:**
-  * `05_feature_engineering.ipynb` (Notebook demonstrating spatial join and feature creation).
-  * California School District shapefiles integrated into `data/school_districts/`.
+* **Deliverable:** `05_feature_engineering.ipynb` (Notebook demonstrating spatial join and feature creation).
 
 #### Week 7: Gradient Boosting & Hyperparameter Tuning
 * Upgraded model architecture to `XGBoost` to handle non-linear tabular interactions via gradient boosted decision trees.
@@ -61,9 +59,7 @@ Data: Data files are not included in this repo. CRMLS sold-listing data is propr
 #### Week 8: Model Evaluation & Error Diagnostics
 * Evaluated out-of-sample performance on the May 2026 test set beyond $R^2$, computing Mean Absolute Error (MAE: \$284,128.99), Root Mean Squared Error (RMSE: \$460,496.79), Mean Absolute Percentage Error (MAPE: 24.70%), and Median Absolute Percentage Error (MdAPE: 17.66%).
 * Segmented residual errors by market tiers (Entry Level, Mid Tier, Upper Tier, Luxury), identifying that the model achieved peak accuracy on core Mid-Tier homes (\$500k–\$1M) with a median percentage error of 15.40%.
-* **Deliverables:**
-  * `07_evaluation.ipynb` (Comprehensive residual diagnostic and evaluation notebook).
-  * `metrics_summary.csv` (Exported breakdown of performance metrics and error distributions across market tiers).
+* **Deliverable:** `07_evaluation.ipynb` (Comprehensive residual diagnostic and evaluation notebook).
 
 ---
 
