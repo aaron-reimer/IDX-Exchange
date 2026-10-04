@@ -63,7 +63,7 @@ The goal of this project is to build and train a machine learning model to predi
 
 1. **Clone the Repository & Set Up Environment:**
    ```bash
-   git clone [https://github.com/aaronxreimer1/IDX-Exchange.git](https://github.com/aaronxreimer1/IDX-Exchange.git)
+   git clone [https://github.com/aaron-reimer/IDX-Exchange.git](https://github.com/aaron-reimer/IDX-Exchange.git)
    cd IDX-Exchange
    python3 -m venv venv
    source venv/bin/activate
